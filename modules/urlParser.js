@@ -11,7 +11,8 @@ urlParser.getTrimmedPath = (req) => {
 
     const parsedPath = url.parse(req.url,true);
     const path = parsedPath.pathname;
-    return path.replace('/^\/+|\/+$/g','');
+    const regex = /^\/+|\/+$/g;
+    return path.replace(regex,'');
 
 }
 
